@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"&gt;
+<head>
+<meta charset="UTF-8">
+<title>Oops! Something Went Wrong</title>
+<style>
+body {
+background-color: #f2f4f8;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #333;
+text-align: center;
+padding: 60px;
+}
+
+.error-container {
+background-color: white;
+padding: 40px;
+margin: 0 auto;
+max-width: 600px;
+border-radius: 12px;
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+font-size: 3rem;
+color: #ff4c4c;
+margin-bottom: 10px;
+}
+
+p {
+font-size: 1.2rem;
+}
+
+.emoji {
+font-size: 4rem;
+}
+
+.home-btn {
+display: inline-block;
+margin-top: 20px;
+padding: 10px 20px;
+font-size: 1rem;
+background-color: #007bff;
+color: white;
+text-decoration: none;
+border-radius: 8px;
+transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+background-color: #0056b3;
+}
+
+.message {
+margin-top: 30px;
+font-style: italic;
+color: #777;
+}
+</style>
+</head>
+<body>
+
+<div class="error-container">
+<div class="emoji">😵</div>
+<h1>Oops! 500 Error</h1>
+<p>Something broke. We're on it! 🔧</p>
+<a href="/user/home" class="home-btn">Go Back Home</a>
+
+<div class="message" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+</div>
+
+</body>
+</html>
